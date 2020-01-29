@@ -5,6 +5,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-image',
+    'gatsby-plugin-layout',
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
@@ -13,7 +14,7 @@ module.exports = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         defaultLayouts: {
-          default: require.resolve('./src/components/layout.js'),
+          default: require.resolve('./src/layouts/index.js'),
         },
         gatsbyRemarkPlugins: [{ resolve: 'gatsby-remark-images' }],
       },
