@@ -1,5 +1,10 @@
 module.exports = {
+  siteMetadata: {
+    title: 'My Homepage',
+    description: 'This is where I write my thoughts.',
+  },
   plugins: [
+    'gatsby-image',
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
@@ -34,8 +39,4 @@ module.exports = {
       },
     },
   ],
-  siteMetadata: {
-    title: 'Front',
-    description: 'Some description',
-  },
 };

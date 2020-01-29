@@ -12,12 +12,8 @@ export const usePosts = () => {
             author
             image {
               childImageSharp {
-                fluid(
-                  maxWidth: 100
-                  maxHeight: 100
-                  duotone: { shadow: "#663399", highlight: "#ddbbff" }
-                ) {
-                  ...GatsbyImageSharpFluid_withWebp
+                fluid(maxWidth: 100, maxHeight: 100) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }
             }
@@ -33,3 +29,5 @@ export const usePosts = () => {
     ...frontmatter,
   }));
 };
+
+// duotone: { shadow: "#663399", highlight: "#ddbbff" }

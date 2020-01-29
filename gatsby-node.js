@@ -22,6 +22,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         title,
         author,
+        slug,
         body: node.body,
       },
     });
