@@ -14,7 +14,7 @@ export default ({ data }) => {
   return (
     <>
       <BackgroundImage
-        fluid={data.file.childImageSharp.fluid}
+        fluid={data.allFile.nodes[0].childImageSharp.fluid}
         css={css`
           * {
             margin-top: 0;
@@ -39,10 +39,17 @@ export default ({ data }) => {
 
 export const pageQuery = graphql`
   query {
-    file(id: { eq: "24bb3ffe-3e8b-59d7-950b-aefce092e96e" }) {
-      childImageSharp {
-        fluid(maxWidth: 1600, maxHeight: 1600, traceSVG: { color: "purple" }) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+    allFile(filter: { name: { eq: "horizontalmountain" } }) {
+      nodes {
+        name
+        childImageSharp {
+          fluid(
+            maxWidth: 1600
+            maxHeight: 1600
+            traceSVG: { color: "purple" }
+          ) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
         }
       }
     }
